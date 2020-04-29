@@ -31,6 +31,11 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.7'
+        addToPath: true
+        architecture: 'x64'
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:

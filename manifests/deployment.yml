@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: pmrzdockerflaskhelloworld 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pmrzdockerflaskhelloworld 
+    spec:
+      containers:
+        - name: pmrzdockerflaskhelloworld 
+          image: jenkinsfarmaks.azurecr.io/pmrzdockerflaskhelloworld
+          ports:
+          - containerPort: 5000
